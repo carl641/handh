@@ -319,61 +319,22 @@
   /* ---------- form ---------- */
   .signup { text-align: center; }
   .signup .stamp { margin-bottom: 2.5rem; }
-  form {
-    max-width: 640px;
-    margin: 2rem auto 0;
-    text-align: left;
+  .form-wrap {
+    max-width: 680px;
+    margin: 2.5rem auto 0;
     background: var(--white);
     border: 4px solid var(--black);
-    padding: 2.5rem 2rem;
+    padding: 1.5rem 1rem 1rem;
     box-shadow: 10px 10px 0 var(--yellow), 10px 10px 0 4px var(--black);
     border-radius: 18px 6px 20px 8px / 7px 20px 8px 22px;
     transform: rotate(-0.5deg);
   }
-  .field { margin-bottom: 1.6rem; }
-  label {
-    display: block;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.05rem;
-    text-transform: uppercase;
-    margin-bottom: 0.45rem;
-    transform: rotate(-0.5deg);
-  }
-  input, select, textarea {
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
-    background: var(--white);
-    border: 3px solid var(--black);
-    border-radius: 8px 3px 10px 4px / 3px 9px 4px 11px;
-    outline: none;
-    transition: box-shadow 0.15s, transform 0.15s;
-  }
-  input:focus, select:focus, textarea:focus {
-    box-shadow: 4px 4px 0 var(--yellow);
-    transform: translate(-2px, -2px);
-  }
-  textarea { resize: vertical; min-height: 110px; }
   .form-note {
     font-family: 'Rock Salt', cursive;
     font-size: 0.75rem;
     margin-top: 1.2rem;
     text-align: center;
     transform: rotate(-1deg);
-  }
-  form .btn { width: 100%; font-size: 1.4rem; margin-top: 0.5rem; }
-  .form-success {
-    display: none;
-    margin-top: 1.5rem;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.3rem;
-    background: var(--yellow);
-    border: 4px solid var(--black);
-    padding: 1.2rem;
-    text-align: center;
-    transform: rotate(-1deg);
-    box-shadow: 5px 5px 0 var(--black);
   }
 
   /* ---------- footer ---------- */
@@ -515,49 +476,10 @@
       with honest answers — even if the honest answer is "you don't need us yet."
     </p>
 
-    <form id="intake-form" action="#" method="POST">
-      <div class="field">
-        <label for="name">Your Name *</label>
-        <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Doe" />
-      </div>
-      <div class="field">
-        <label for="company">Business Name *</label>
-        <input type="text" id="company" name="company" required autocomplete="organization" placeholder="Doe's Plumbing &amp; Heating" />
-      </div>
-      <div class="field">
-        <label for="industry">What Kind of Work? *</label>
-        <select id="industry" name="industry" required>
-          <option value="" disabled selected>Pick your trade…</option>
-          <option>HVAC</option>
-          <option>Plumbing</option>
-          <option>Electrical</option>
-          <option>Roofing</option>
-          <option>Landscaping / Lawn Care</option>
-          <option>Cleaning</option>
-          <option>Painting</option>
-          <option>Pest Control</option>
-          <option>General Contracting / Remodeling</option>
-          <option>Other Home Service</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@doesplumbing.com" />
-      </div>
-      <div class="field">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555" />
-      </div>
-      <div class="field">
-        <label for="message">What's the biggest thing holding your business back?</label>
-        <textarea id="message" name="message" placeholder="Slow season is killing us… competitors outrank us on Maps… we live and die by word of mouth…"></textarea>
-      </div>
-      <button class="btn" type="submit">Let's Hustle ★</button>
+    <div class="form-wrap">
+      <script type="text/javascript" src="https://form.jotform.com/jsform/261624485439061"></script>
       <p class="form-note">no spam. no pressure. just a real conversation.</p>
-      <div class="form-success" id="form-success">
-        ★ Got it! We'll hit you back within one business day. ★
-      </div>
-    </form>
+    </div>
   </section>
 
   <footer>
@@ -567,16 +489,5 @@
     <p>&copy; 2026 Hustle &amp; Hype Marketing. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Swap the action URL for a real form backend (e.g. Formspree) to receive
-    // submissions by email; until then we just show the success message.
-    document.getElementById('intake-form').addEventListener('submit', function (e) {
-      if (this.action.endsWith('#') || this.action === window.location.href) {
-        e.preventDefault();
-        document.getElementById('form-success').style.display = 'block';
-        this.querySelector('button[type=submit]').disabled = true;
-      }
-    });
-  </script>
 </body>
 </html>
